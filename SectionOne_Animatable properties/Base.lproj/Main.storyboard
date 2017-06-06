@@ -91,6 +91,7 @@
                         <outlet property="cloud3" destination="mN4-3d-x5T" id="eFQ-dK-UAC"/>
                         <outlet property="cloud4" destination="UUg-PE-Ns7" id="tmM-X5-XYA"/>
                         <outlet property="heading" destination="GBz-Ge-jhH" id="IeC-oA-ASD"/>
+                        <outlet property="loginButton" destination="Abo-X1-lwC" id="9hP-Wy-z1y"/>
                         <outlet property="password" destination="IfM-fT-WWC" id="Yu6-r8-HVl"/>
                         <outlet property="username" destination="CHx-6S-7k9" id="yoM-gl-cxB"/>
                     </connections>
