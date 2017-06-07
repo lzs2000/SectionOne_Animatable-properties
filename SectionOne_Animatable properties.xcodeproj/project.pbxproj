@@ -14,6 +14,7 @@
 		8DF735561EE643C100E92471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF735541EE643C100E92471 /* LaunchScreen.storyboard */; };
 		8DF735611EE643C100E92471 /* SectionOne_Animatable_propertiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF735601EE643C100E92471 /* SectionOne_Animatable_propertiesTests.swift */; };
 		8DF7356C1EE643C100E92471 /* SectionOne_Animatable_propertiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF7356B1EE643C100E92471 /* SectionOne_Animatable_propertiesUITests.swift */; };
+		8DF7357A1EE7A36D00E92471 /* TransitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF735791EE7A36D00E92471 /* TransitionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8DF735671EE643C100E92471 /* SectionOne_Animatable propertiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SectionOne_Animatable propertiesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF7356B1EE643C100E92471 /* SectionOne_Animatable_propertiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOne_Animatable_propertiesUITests.swift; sourceTree = "<group>"; };
 		8DF7356D1EE643C100E92471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF735791EE7A36D00E92471 /* TransitionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				8DF7354B1EE643C100E92471 /* AppDelegate.swift */,
 				8DF7354D1EE643C100E92471 /* ViewController.swift */,
+				8DF735791EE7A36D00E92471 /* TransitionsViewController.swift */,
 				8DF7354F1EE643C100E92471 /* Main.storyboard */,
 				8DF735521EE643C100E92471 /* Assets.xcassets */,
 				8DF735541EE643C100E92471 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DF7354E1EE643C100E92471 /* ViewController.swift in Sources */,
+				8DF7357A1EE7A36D00E92471 /* TransitionsViewController.swift in Sources */,
 				8DF7354C1EE643C100E92471 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +511,7 @@
 				8DF735721EE643C100E92471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DF735731EE643C100E92471 /* Build configuration list for PBXNativeTarget "SectionOne_Animatable propertiesTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				8DF735751EE643C100E92471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DF735761EE643C100E92471 /* Build configuration list for PBXNativeTarget "SectionOne_Animatable propertiesUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				8DF735781EE643C100E92471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
