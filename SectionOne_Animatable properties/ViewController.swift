@@ -8,6 +8,15 @@
 
 import UIKit
 
+//A delay function
+func delay(seconds: Double, completion:@escaping ()->()){
+    let popTime = DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * seconds)) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: popTime) { 
+        completion()
+    }
+    
+}
+
 class ViewController: UIViewController {
     //云
     @IBOutlet weak var cloud1: UIImageView!
@@ -19,7 +28,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var heading: UILabel!
     
+    //Transition动画的view
     var label = UILabel()
+    let message = ["Connecting", "Authorizing...", "Failed"]
+    var status = UIImageView(image: UIImage(named: "banner"))
+    var statusPosition = CGPoint()
+    
+    
+    
     
     @IBOutlet weak var loginButton: UIButton!
     
@@ -32,6 +48,16 @@ class ViewController: UIViewController {
         self.spinner.startAnimating()
         self.spinner.alpha = 0.0
         self.loginButton.addSubview(spinner)
+        
+        //首先将label隐藏
+        status.center = self.loginButton.center
+        label.frame = status.bounds
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        status.addSubview(label)
+        self.view.addSubview(status)
+        status.isHidden = true
+        statusPosition = status.center
         
         /* here are the properties you can use to modify a view's position and size
          bounds: Animate this property to reposition the view's content within the view's frame
@@ -111,7 +137,10 @@ class ViewController: UIViewController {
         //改变尺寸
         UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping:0.2, initialSpringVelocity:0.0,  options: [], animations: {
             self.loginButton.bounds.size.width += 80
-        }, completion: nil)
+            
+        }, completion: {_ in
+            self.showMessge(index: 0)
+        })
         
         //改变位置
         UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping:0.7, initialSpringVelocity: 0.0,  options: [], animations: {
@@ -131,8 +160,31 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    
     func showMessge(index: Int) {
+        label.text = message[index]
         
+        UIView.transition(with: status, duration: 0.33, options: [.curveEaseOut, .transitionCurlDown], animations: { 
+            self.status.isHidden = false
+        }) { (_) in
+            delay(seconds: 2.0, completion: { 
+                if index < self.message.count - 1 {
+                    self.removeMessage(index: index)
+                } else {
+                    
+                }
+            })
+        }
+    }
+    
+    func removeMessage(index:Int) {
+        UIView.animate(withDuration: 0.33, delay: 0.0, options: [], animations: { 
+            self.status.center.x += self.view.frame.size.width
+        }) { (_) in
+            self.status.isHidden = true
+            self.status.center = self.statusPosition
+            self.showMessge(index: index + 1)
+        }
     }
 }
 

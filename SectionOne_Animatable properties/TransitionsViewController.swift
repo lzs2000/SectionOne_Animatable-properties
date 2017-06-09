@@ -14,6 +14,9 @@ let olderView = UIImageView(image: UIImage(named: "23"))
 let btn = UIButton(frame: CGRect(x: 100, y: 600, width: 200, height: 50))
 
 
+
+
+
 class TransitionsViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -65,14 +68,5 @@ class TransitionsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+   }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
