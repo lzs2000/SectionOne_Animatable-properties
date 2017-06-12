@@ -155,8 +155,6 @@ class ViewController: UIViewController {
          print("\(#function) in \(object_getClassName(self))")
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
 extension ViewController {
@@ -164,7 +162,7 @@ extension ViewController {
     func showMessge(index: Int) {
         label.text = message[index]
         
-        UIView.transition(with: status, duration: 0.33, options: [.curveEaseOut, .transitionCurlDown], animations: { 
+        UIView.transition(with: status, duration: 0.33, options: [.curveEaseOut, .transitionFlipFromBottom], animations: {
             self.status.isHidden = false
         }) { (_) in
             delay(seconds: 2.0, completion: { 
@@ -175,6 +173,8 @@ extension ViewController {
                 }
             })
         }
+        
+        
     }
     
     func removeMessage(index:Int) {
